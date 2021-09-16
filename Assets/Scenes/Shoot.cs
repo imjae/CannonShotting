@@ -20,13 +20,13 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             // 마우스 왼쪽 버튼을 눌렀을 때의 처리
             gaugeStartTime = Time.time;
         }
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
         {
             float gaugeEndTime = Time.time;
             powerGauge = (gaugeEndTime - gaugeStartTime) * 1000f;
@@ -35,7 +35,7 @@ public class Shoot : MonoBehaviour
                 powerGaugeText.text = powerGauge.ToString();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space))
         {
             // 마우스 왼쪽 버튼을 뗄 때의 처리
             Instantiate(bullet);

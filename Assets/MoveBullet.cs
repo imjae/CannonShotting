@@ -11,7 +11,6 @@ public class MoveBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         GameObject tower = FindObjectOfType<Shoot>().gameObject;
         GameObject rotater = tower.transform.Find("rotater").gameObject;
         GameObject cannon = rotater.transform.Find("cannon").gameObject;
@@ -23,8 +22,6 @@ public class MoveBullet : MonoBehaviour
         Debug.Log(cannon.transform.rotation);
 
         Vector3 v = new Vector3(rotateX, rotateY, rotateZ);
-
-        Debug.Log(v);
 
         power = FindObjectOfType<Shoot>().powerGauge;
         Rigidbody bulletRigidbody = GetComponent<Rigidbody>();
